@@ -10,7 +10,7 @@ spec:
   - name: hello-hello-hello
     steps:
     - - name: hello1
-        template: whalesay
+        template: fail-randomly
         arguments:
           parameters: [{name: message, value: "hello1"}]
     - - name: hello2a
@@ -18,7 +18,7 @@ spec:
         arguments:
           parameters: [{name: message, value: "hello2a"}]
       - name: hello2b
-        template: whalesay
+        template: fail-randomly
         arguments:
           parameters: [{name: message, value: "hello2b"}]
 
