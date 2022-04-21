@@ -17,7 +17,7 @@ spec:
     - - name: generate
         template: gen-random-int
     - - name: print
-        template: print-message
+        template: print-message-with-color
         arguments:
           parameters:
           - name: message
