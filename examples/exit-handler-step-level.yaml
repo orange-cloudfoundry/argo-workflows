@@ -27,7 +27,7 @@ spec:
 
     - name: exit
       container:
-        image: docker/whalesay
+        image: argoproj/argosay:v2
         command: [cowsay]
         args: ["step cleanup"]
 
@@ -36,6 +36,6 @@ spec:
         parameters:
           - name: message
       container:
-        image: docker/whalesay
+        image: argoproj/argosay:v2
         command: [cowsay]
         args: ["{{inputs.parameters.message}}"]

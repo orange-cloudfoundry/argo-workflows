@@ -9,15 +9,15 @@ spec:
   templates:
   - name: hello-hello-hello
     steps:
-    - - name: hello1
+    - - name: hello1 # hello1 is run before the following steps
         template: whalesay
         arguments:
           parameters: [{name: message, value: "hello1"}]
-    - - name: hello2a
+    - - name: hello2a  # double dash => run after previous step
         template: whalesay
         arguments:
           parameters: [{name: message, value: "hello2a"}]
-      - name: hello2b
+      - name: hello2b   # single dash => run in parallel with previous step
         template: whalesay
         arguments:
           parameters: [{name: message, value: "hello2b"}]
@@ -27,6 +27,6 @@ spec:
       parameters:
       - name: message
     container:
-      image: docker/whalesay
+      image: argoproj/argosay:v2
       command: [cowsay]
       args: ["{{inputs.parameters.message}}"]

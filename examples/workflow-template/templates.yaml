@@ -10,7 +10,7 @@ spec:
       parameters:
       - name: message
     container:
-      image: docker/whalesay
+      image: argoproj/argosay:v2
       command: [cowsay]
       args: ["{{inputs.parameters.message}}"]
 ---
@@ -40,7 +40,7 @@ spec:
       parameters:
       - name: message
     container:
-      image: docker/whalesay
+      image: argoproj/argosay:v2
       command: [cowsay]
       args: ["{{inputs.parameters.message}}"]
   - name: inner-steps
@@ -86,7 +86,7 @@ spec:
       parameters:
       - name: message
     container:
-      image: docker/whalesay
+      image: argoproj/argosay:v2
       command: [cowsay]
       args: ["{{inputs.parameters.message}}"]
   - name: inner-diamond
@@ -140,6 +140,6 @@ spec:
         parameters:
           - name: message
       container:
-        image: docker/whalesay
+        image: argoproj/argosay:v2
         command: [cowsay]
         args: ["{{inputs.parameters.message}}"]

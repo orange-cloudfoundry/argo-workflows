@@ -102,7 +102,7 @@ spec:
   templates:
   - name: whalesay              # name of the template
     container:
-      image: docker/whalesay
+      image: argoproj/argosay:v2
       command: [cowsay]
       args: ["hello world"]
       resources:                # limit the resources
@@ -139,7 +139,7 @@ spec:
       - name: message       # parameter declaration
     container:
       # run cowsay with that message input parameter as args
-      image: docker/whalesay
+      image: argoproj/argosay:v2
       command: [cowsay]
       args: ["{{inputs.parameters.message}}"]
 ```
@@ -248,7 +248,7 @@ spec:
       parameters:
       - name: message
     container:
-      image: docker/whalesay
+      image: argoproj/argosay:v2
       command: [cowsay]
       args: ["{{inputs.parameters.message}}"]
 ```
@@ -1233,7 +1233,7 @@ spec:
 
   - name: whalesay
     container:
-      image: docker/whalesay
+      image: argoproj/argosay:v2
       command: [cowsay]
       args: ["hello world"]
 ```
@@ -1550,7 +1550,7 @@ spec:
         parameters:
           - name: message
       container:
-        image: docker/whalesay
+        image: argoproj/argosay:v2
         command: [cowsay]
         args: ["{{user.username}}"]
 

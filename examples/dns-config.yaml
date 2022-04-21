@@ -7,7 +7,7 @@ spec:
   templates:
   - name: whalesay              # name of the template
     container:
-      image: docker/whalesay
+      image: argoproj/argosay:v2
       command: [cowsay]
       args: ["hello world"]
       resources:                # limit the resources
