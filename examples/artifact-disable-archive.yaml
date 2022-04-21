@@ -27,7 +27,7 @@ spec:
 
   - name: whalesay
     container:
-      image: docker/whalesay:latest
+      image: argoproj/argosay:v2
       command: [sh, -c]
       args: ["cowsay hello world | tee /tmp/hello_world.txt | tee /tmp/hello_world_nc.txt ; sleep 1"]
     outputs:

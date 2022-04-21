@@ -35,7 +35,7 @@ spec:
         configMap:
           name: my-config
     container:
-      image: docker/whalesay:latest
+      image: argoproj/argosay:v2
       command: [sh, -c]
       args: ["cowsay {{inputs.parameters.message}} > /tmp/hello_world.txt"]
     outputs:

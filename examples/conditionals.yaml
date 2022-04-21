@@ -30,6 +30,6 @@ spec:
 
   - name: whalesay
     container:
-      image: docker/whalesay:latest
+      image: argoproj/argosay:v2
       command: [sh, -c]
       args: ["cowsay hello"]

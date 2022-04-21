@@ -33,7 +33,7 @@ spec:
   # container template which generates an output parameter and artifact
   - name: generate
     container:
-      image: docker/whalesay:latest
+      image: argoproj/argosay:v2
       command: [sh, -c]
       args: ["
         cowsay hello world | tee /tmp/my-output-artifact.txt &&

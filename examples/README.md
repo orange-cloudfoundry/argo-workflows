@@ -345,7 +345,7 @@ spec:
 
   - name: whalesay
     container:
-      image: docker/whalesay:latest
+      image: argoproj/argosay:v2
       command: [sh, -c]
       args: ["cowsay hello world | tee /tmp/hello_world.txt"]
     outputs:
@@ -549,7 +549,7 @@ spec:
 
   - name: whalesay
     container:
-      image: docker/whalesay:latest
+      image: argoproj/argosay:v2
       command: [sh, -c]
       args: ["echo -n hello world > /tmp/hello_world.txt"]  # generate the content of hello_world.txt
     outputs:
@@ -563,7 +563,7 @@ spec:
       parameters:
       - name: message
     container:
-      image: docker/whalesay:latest
+      image: argoproj/argosay:v2
       command: [cowsay]
       args: ["{{inputs.parameters.message}}"]
 ```
@@ -599,7 +599,7 @@ spec:
       parameters:
       - name: message
     container:
-      image: docker/whalesay:latest
+      image: argoproj/argosay:v2
       command: [cowsay]
       args: ["{{inputs.parameters.message}}"]
 ```
@@ -1028,7 +1028,7 @@ spec:
 
   - name: whalesay
     container:
-      image: docker/whalesay:latest
+      image: argoproj/argosay:v2
       command: [sh, -c]
       args: ["echo generating message in volume; cowsay hello world | tee /mnt/vol/hello_world.txt"]
       # Mount workdir volume at /mnt/vol before invoking docker/whalesay
@@ -1088,7 +1088,7 @@ spec:
 
   - name: whalesay
     container:
-      image: docker/whalesay:latest
+      image: argoproj/argosay:v2
       command: [sh, -c]
       args: ["echo generating message in volume; cowsay hello world | tee /mnt/vol/hello_world.txt"]
       volumeMounts:
@@ -1170,7 +1170,7 @@ spec:
         persistentVolumeClaim:
           claimName: '{{inputs.parameters.pvc-name}}'
     container:
-      image: docker/whalesay:latest
+      image: argoproj/argosay:v2
       command: [sh, -c]
       args: ["echo generating message in volume; cowsay hello world | tee /mnt/vol/hello_world.txt"]
       volumeMounts:
